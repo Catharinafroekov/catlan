@@ -11,9 +11,9 @@ function Navigation() {
 
     return (
         <header>
-            <nav className="flex justify-between items-center p-5 bg-blue-100">
+            <nav className="flex justify-between items-center p-5">
                 {/* Logo */}
-                <img src="/img/ravn.svg" alt="ravn ikon" className="h-8 w-auto" />
+                <Link href="/"><img src="/img/ravn.svg" alt="ravn ikon" className="h-8 w-auto" /></Link>
 
                 {/* Burger Button */}
                 <button className="text-black" onClick={toggleMenu}>
@@ -33,22 +33,23 @@ function Navigation() {
 
             {/* Dropdown Menu */}
             {isMenuOpen && (
-                <ul className="flex flex-col items-start bg-blue-100 text-black p-4 space-y-2">
-                    <li>
-                        <Link href="/" className="hover:underline">Home</Link>
+                <ul className="fixed top-20 left-0 right-0 bottom-0 flex flex-col items-center gap-10 bg-blue text-black p-4 space-y-2 h-screen z-[100]">
+                    <li className="mt-10">
+                        <Link href="/" className="hover:underline hover:text-lilla text-4xl">Home</Link>
                     </li>
                     <li>
-                        <Link href="/program" className="hover:underline">Program</Link>
+                        <Link href="/program" className="hover:underline hover:text-lilla text-4xl">Program</Link>
                     </li>
                     <li>
-                        <Link href="/ticket" className="hover:underline">Tickets</Link>
+                        <Link href="/ticket" className="hover:underline hover:text-lilla text-4xl">Tickets</Link>
                     </li>
                     <li>
-                        <Link href="/lineup" className="hover:underline">Lineup</Link>
+                        <Link href="/lineup" className="hover:underline hover:text-lilla text-4xl">Lineup</Link>
                     </li>
                 </ul>
             )}
         </header>
+
     );
 }
 
