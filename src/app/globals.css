@@ -2,9 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  body {
+    color: var(--foreground);
+    background-image: linear-gradient(
+      to bottom left,
+      #e4f7ff,
+      #e4f7ff,
+      #f5ccfc,
+      #51a4f7
+    );
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100vh;
+  }
+}
+
 :root {
-  --background: #ffffff;
   --foreground: #171717;
+  --background: #ffffff;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -12,10 +27,4 @@
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
 }
