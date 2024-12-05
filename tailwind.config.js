@@ -17,7 +17,9 @@ module.exports = {
         200: "200px",
         300: "300px",
         500: "500px",
+        75: "75px",
         50: "50px",
+        25: "35px",
       },
       width: {
         100: "100px",
@@ -25,10 +27,23 @@ module.exports = {
         200: "200px",
         300: "300px",
         500: "500px",
+        75: "75px",
         50: "50px",
+        25: "35px",
       },
       colors: {
         lilla: "#732282",
+      },
+      borderRadius: {
+        15: "15px",
+      },
+      screens: {
+        xs: "400px",
+        sm: "680px",
+        md: "888px",
+        lg: "1284px",
+        xl: "1280px",
+        "2xl": "1536px",
       },
     },
   },
