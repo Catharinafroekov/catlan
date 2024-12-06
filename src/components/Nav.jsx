@@ -11,9 +11,9 @@ function Navigation() {
 
     return (
         <header>
-            <nav className="flex justify-between items-center p-5 bg-blue-100">
+            <nav className="flex justify-between items-center p-5">
                 {/* Logo */}
-                <img src="/img/ravn.svg" alt="ravn ikon" className="h-8 w-auto" />
+                <Link href="/"><img src="/img/ravn.svg" alt="ravn ikon" className="h-8 w-auto" /></Link>
 
                 {/* Burger Button */}
                 <button className="text-black" onClick={toggleMenu}>
@@ -32,22 +32,26 @@ function Navigation() {
             </nav>
 
             {/* Dropdown Menu */}
-            {isMenuOpen && (
-                <ul className="flex flex-col items-start bg-blue-100 text-black p-4 space-y-2">
-                    <li>
-                        <Link href="/" className="hover:underline">Home</Link>
+            <div className={`fixed top-20 left-0 w-full h-screen bg-blue text-black p-4 z-[100] transform transition-transform duration-500 ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+                <ul className="flex flex-col items-center gap-4 mt-20">
+                    <li className="flex flex-col items-center">
+                        <Link href="/" className=" hover:text-lilla text-4xl">Home</Link>
+                        <hr style={{ width: '400px' }} className="border-t border-black my-4" />
                     </li>
-                    <li>
-                        <Link href="/program" className="hover:underline">Program</Link>
+                    <li className="flex flex-col items-center">
+                        <Link href="/program" className=" hover:text-lilla text-4xl">Program</Link>
+                        <hr style={{ width: '400px' }} className="border-t border-black my-4" />
                     </li>
-                    <li>
-                        <Link href="/ticket" className="hover:underline">Tickets</Link>
+                    <li className="flex flex-col items-center">
+                        <Link href="/ticket" className=" hover:text-lilla text-4xl">Tickets</Link>
+                        <hr style={{ width: '400px' }} className="border-t border-black my-4" />
                     </li>
-                    <li>
-                        <Link href="/lineup" className="hover:underline">Lineup</Link>
+                    <li className="flex flex-col items-center">
+                        <Link href="/lineup" className=" hover:text-lilla text-4xl">Lineup</Link>
+                        <hr style={{ width: '400px' }} className="border-t border-black my-4" />
                     </li>
                 </ul>
-            )}
+            </div>
         </header>
     );
 }

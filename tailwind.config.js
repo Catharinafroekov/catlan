@@ -33,6 +33,7 @@ module.exports = {
       },
       colors: {
         lilla: "#732282",
+        blue: "#e4f7ff",
       },
       borderRadius: {
         15: "15px",
