@@ -1,59 +1,46 @@
 "use client";
-import React, { useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import { FaArrowCircleRight } from "react-icons/fa";
-import { FaArrowCircleLeft } from "react-icons/fa";
+import { FaArrowCircleRight, FaArrowCircleLeft } from "react-icons/fa";
+import Image from "next/image";
 
 const Carousel = () => {
-  const swiperRef = useRef(null); // Reference til Swiper-instansen
+  const [bands, setBands] = useState([]); // State til at gemme bands-data
 
-  const handlePrev = () => {
-    if (swiperRef.current) {
-      swiperRef.current.slidePrev(); // Gå til det forrige slide
-    }
-  };
+  // Funktion til at hente data fra API
+  useEffect(() => {
+    const Bands = async () => {
+      const response = await fetch("http://localhost:8080/bands");
+      const data = await response.json();
+      setBands(data); // Gem dataen i state
+    };
 
-  const handleNext = () => {
-    if (swiperRef.current) {
-      swiperRef.current.slideNext(); // Gå til det næste slide
-    }
-  };
+  },);
 
   return (
     <div className="relative">
       <Swiper
         spaceBetween={50}
         slidesPerView={1}
-        onSwiper={(swiper) => {
-          swiperRef.current = swiper; // Gem Swiper-instansen
-        }}
       >
-        <SwiperSlide>
-          <div className="bg-purple-500 h-64 flex items-center justify-center text-white">
-            Slide 1
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="bg-purple-200 h-64 flex items-center justify-center text-white">
-            Slide 2
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="bg-purple-800 h-64 flex items-center justify-center text-white">
-            Slide 3
-          </div>
-        </SwiperSlide>
+        {bands.map((band) => (
+          <SwiperSlide key={band.name}>
+            <div className="bg-purple-500 h-64 flex flex-col items-center justify-center text-white">
+              <h2 className="text-xl font-bold">{band.name}</h2>
+              <p>{band.genre}</p>
+            </div>
+          </SwiperSlide>
+        ))}
       </Swiper>
-      {/* Almindelige knapper til navigation */}
       <button
-        onClick={handlePrev}
+        onClick={() => swiperRef.current?.slidePrev()} // Direkte adgang til swiper-metoder
         className="absolute top-1/2 left-4 transform -translate-y-1/2 text-white text-3xl z-10"
       >
         <FaArrowCircleLeft />
       </button>
       <button
-        onClick={handleNext}
+        onClick={() => swiperRef.current?.slideNext()} // Direkte adgang til swiper-metoder
         className="absolute top-1/2 right-4 transform -translate-y-1/2 text-white text-3xl z-10"
       >
         <FaArrowCircleRight />
