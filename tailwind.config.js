@@ -33,7 +33,10 @@ module.exports = {
       },
       colors: {
         lilla: "#732282",
+
         blue: "#e4f7ff",
+
+        blue: "#6188C1",
       },
       borderRadius: {
         15: "15px",
@@ -45,6 +48,15 @@ module.exports = {
         lg: "1284px",
         xl: "1280px",
         "2xl": "1536px",
+      },
+      animation: {
+        motion: "motion 30s linear infinite",
+      },
+      keyframes: {
+        motion: {
+          "0%": { transform: "translateX(100%)" },
+          "100%": { transform: "translateX(-100%)" },
+        },
       },
     },
   },

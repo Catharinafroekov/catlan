@@ -17,6 +17,21 @@
   }
 }
 
+@layer utilities {
+  @keyframes motion {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  .motion-animation {
+    animation: motion 5s linear infinite;
+  }
+}
+
 :root {
   --foreground: #171717;
   --background: #ffffff;
