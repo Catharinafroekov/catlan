@@ -13,7 +13,7 @@ const Carousel = () => {
     const Bands = async () => {
       const response = await fetch("http://localhost:8080/bands");
       const data = await response.json();
-      setBands(data); // Gem dataen i state
+      setBands(data);
     };
 
   },);
@@ -34,13 +34,13 @@ const Carousel = () => {
         ))}
       </Swiper>
       <button
-        onClick={() => swiperRef.current?.slidePrev()} // Direkte adgang til swiper-metoder
+        onClick={() => swiperRef.current?.slidePrev()} // Swiper, side skifte med knap i stedet for swipe
         className="absolute top-1/2 left-4 transform -translate-y-1/2 text-white text-3xl z-10"
       >
         <FaArrowCircleLeft />
       </button>
       <button
-        onClick={() => swiperRef.current?.slideNext()} // Direkte adgang til swiper-metoder
+        onClick={() => swiperRef.current?.slideNext()} 
         className="absolute top-1/2 right-4 transform -translate-y-1/2 text-white text-3xl z-10"
       >
         <FaArrowCircleRight />
