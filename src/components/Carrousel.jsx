@@ -10,7 +10,7 @@ const Carrousel = () => {
 
   useEffect(() => {
     const Bands = async () => {
-      const response = await fetch("http://localhost:8080/bands");
+      const response = await fetch("http://localhost:8080/booking");
       const data = await response.json();
       setBands(data);
     };
