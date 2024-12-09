@@ -38,7 +38,6 @@ module.exports = {
 
         blue: "#e4f7ff",
 
-        blue: "#6188C1",
       },
       borderRadius: {
         15: "15px",
