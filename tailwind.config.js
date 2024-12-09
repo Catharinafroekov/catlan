@@ -20,12 +20,14 @@ module.exports = {
         75: "75px",
         50: "50px",
         25: "35px",
+        30: "30px",
       },
       width: {
         100: "100px",
         150: "150px",
         200: "200px",
         300: "300px",
+        400: "400px",
         500: "500px",
         75: "75px",
         50: "50px",
@@ -40,6 +42,7 @@ module.exports = {
       },
       borderRadius: {
         15: "15px",
+        12: "12px",
       },
       screens: {
         xs: "400px",
