@@ -4,7 +4,7 @@ import { FaTwitterSquare } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <section className="  xs:h-250 lg:h-300 flex justify-evenly p-10 fixed bottom-0 w-full bg-white bg-opacity-30">
+    <section className="  xs:h-250 lg:h-300 flex justify-evenly p-10 mt-5 bottom-0 w-full bg-white bg-opacity-30">
       <div className="mt-5">
         <FaInstagramSquare className="text-lilla xs:h-25 xs:w-25 lg:h-50 lg:w-50" />
         <FaFacebookSquare className="text-lilla xs:h-25 xs:w-25 lg:h-50 lg:w-50" />

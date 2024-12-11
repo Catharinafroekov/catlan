@@ -35,7 +35,7 @@ module.exports = {
       },
       colors: {
         lilla: "#732282",
-
+        darkblue: "#6188C1",
         blue: "#e4f7ff",
 
       },
