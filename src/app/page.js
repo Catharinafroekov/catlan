@@ -5,7 +5,7 @@ import Banner from "@/components/Banner";
 import Image from "next/image";
 import Button from "@/components/Button";
 import Formel from "@/components/Formel";
-import Carrousel from "@/components/Carrousel";
+import LineupBands from "@/components/LineupBands";
 
 export default function Home() {
   return (
@@ -14,6 +14,7 @@ export default function Home() {
       <Nav />
       <Arrow />
       <Banner />
+      <LineupBands/>
       <Button />
       <Formel />
       <Footer />
