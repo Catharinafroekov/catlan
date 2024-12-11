@@ -8,12 +8,8 @@ const Carrousel = () => {
 
   // Hent data fra API
   useEffect(() => {
-
     const fetchSchedule = async () => {
       const response = await fetch("http://localhost:8080/schedule");
-
-    const Bands = async () => {
-      const response = await fetch("http://localhost:8080/booking");kurv-mm
       const data = await response.json();
       setSchedule(data);
     };
