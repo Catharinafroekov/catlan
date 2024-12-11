@@ -1,26 +1,41 @@
 "use client";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
+import CampingCard from "./CampingCard";
+import Kurv from "./Kurv";
 
 const Camping = () => {
-  const [bookings, setBookings] = useState([]);
+  const [bookings, setBookings] = useState([]); // Lagrer campingpladser
+  const [cartItems, setCartItems] = useState([]); // Lagrer items i kurven
 
+  // Hent campingpladserne (bookings) fra API
   useEffect(() => {
-    const Bookings = async () => {
+    const fetchBookings = async () => {
       const response = await fetch("http://localhost:8080/available-spots");
       const data = await response.json();
       setBookings(data);
     };
-    Bookings(); // Call the function here
-  }, [1]); // Add an empty dependency array to run only on mount, er det nødvendig
+
+    fetchBookings();
+  }, []);
+
+  // Funktion til at tilføje campingplads til kurven
+  const addToCart = (area) => {
+    setCartItems([area]);
+  };
 
   return (
-    <section className="bg-white bg-opacity-75 h-400 w-400 rounded-12 pb-7 pt-7">
-      {bookings.map((booking, index) => (
-        <div className="p" key={index}>
-          <h2 className="text-xl font-bold">{booking.area}</h2>
-          <p>{booking.available} Available</p>
-        </div>
-      ))}
+    <section className="p-10">
+      <div>
+        {bookings.map((booking, index) => (
+          <CampingCard
+            key={index}
+            area={booking.area}
+            available={booking.available}
+            addToCart={addToCart} // Sender addToCart funktionen som prop
+          />
+        ))}
+      </div>
+      <Kurv cartItems={cartItems} /> {/* Viser de valgte campingpladser */}
     </section>
   );
 };

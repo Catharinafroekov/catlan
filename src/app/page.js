@@ -8,6 +8,7 @@ import Formel from "@/components/Formel";
 import Carrousel from "@/components/Carrousel";
 import Ticket from "@/components/Ticket";
 import Camping from "@/components/Camping";
+import Kurv from "@/components/Kurv";
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
       <Footer /> */}
       {/*       <Ticket /> */}
       <Camping />
+      <Kurv />
     </div>
   );
 }
