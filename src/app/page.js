@@ -12,6 +12,11 @@ export default function Home() {
     <div>
       {/*       <Carrousel /> */}
       <Nav />
+      <img
+          className="xs:w-75 xs:h-75 xs:mt-10  md:w-150 md:h-150"
+          src="/img/logo.svg"
+          alt="logo ikon"
+        ></img>
       <Arrow />
       <Banner />
       <LineupBands/>

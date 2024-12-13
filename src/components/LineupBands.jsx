@@ -16,12 +16,12 @@ const Lineup = () => {
 
     // Del bands op i niveauer for pyramiden
     const pyramidLevels = [];
-    let levelSize = 5; // Start med 5 bands på første niveau
-    let remainingBands = [...bands]; // Lav en kopi af bands
+    let levelSize = 5; //5 bands på første niveau af pyramiden
+    let remainingBands = [...bands]; // kopi af bands
 
     while (remainingBands.length > 0) {
         pyramidLevels.push(remainingBands.slice(0, levelSize)); // Tag bands til dette niveau
-        remainingBands = remainingBands.slice(levelSize); // Fjern de bands, der blev brugt
+        remainingBands = remainingBands.slice(levelSize); // Fjerner de bands, der blev brugt på første niveau
         levelSize = Math.max(1, levelSize - 1); // Reducer antal bands pr. niveau
     }
 
