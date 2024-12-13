@@ -24,16 +24,12 @@ const BandsLineup = () => {
                 <div key={index} className="text-center">
                   <Image
                     className="mb-4"
-                    src={`/${band.logo}`}
+                    src={band.logo.includes("https") ? band.logo : `/img/${band.logo}`}
                     width={250}
                     height={350}
                     alt={band.logo}
                   />
- <img
-          className="xs:w-75 xs:h-75 xs:mt-10  md:w-150 md:h-150"
-          src="/img/bands.png"
-          alt="logo ikon"
-        ></img>                  <p className="bg-gray-100 p-2 rounded shadow">{band.name}</p>
+               <p className="bg-gray-100 p-2 rounded shadow">{band.name}</p>
                 </div>
               ))}
             </div>
