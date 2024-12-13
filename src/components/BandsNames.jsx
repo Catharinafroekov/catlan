@@ -9,7 +9,7 @@ const BandsLineup = () => {
     // Funktion til at hente data fra API
     useEffect(() => {
       const Bands = async () => {
-        const response = await fetch("http://localhost:8080/bands?limit=15");
+        const response = await fetch("http://localhost:8080/bands?limit=1");
         const data = await response.json();
         setBands(data);
       };
@@ -24,12 +24,16 @@ const BandsLineup = () => {
                 <div key={index} className="text-center">
                   <Image
                     className="mb-4"
-                    src={"http://localhost:8080/bands"}
+                    src={`/${band.logo}`}
                     width={250}
                     height={350}
                     alt={band.logo}
                   />
-                  <p className="bg-gray-100 p-2 rounded shadow">{band.name}</p>
+ <img
+          className="xs:w-75 xs:h-75 xs:mt-10  md:w-150 md:h-150"
+          src="/img/bands.png"
+          alt="logo ikon"
+        ></img>                  <p className="bg-gray-100 p-2 rounded shadow">{band.name}</p>
                 </div>
               ))}
             </div>
