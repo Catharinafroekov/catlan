@@ -18,9 +18,9 @@ const Camping = () => {
     fetchBookings();
   }, []);
 
-  // Funktion til at tilføje campingplads til kurven
-  const addToCart = (area) => {
-    setCartItems([area]);
+  // Funktion til at tilføje campingplads til kurven (kun én ad gangen)
+  const addToCart = (booking) => {
+    setCartItems([booking]); // Sætter kun én campingplads i kurven
   };
 
   return (
