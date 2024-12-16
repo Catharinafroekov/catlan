@@ -6,23 +6,7 @@ import Image from "next/image";
 import Button from "@/components/Button";
 import Formel from "@/components/Formel";
 import Carrousel from "@/components/Carrousel";
-import Ticket from "@/components/Ticket";
-import Camping from "@/components/Camping";
-import Kurv from "@/components/Kurv";
 
 export default function Home() {
-  return (
-    <div>
-      {/*       <Carrousel /> */}
-      {/*       <Nav />
-      <Arrow />
-      <Banner />
-      <Button />
-      <Formel />
-      <Footer /> */}
-      {/*       <Ticket /> */}
-      <Camping />
-      <Kurv />
-    </div>
-  );
+  return <div></div>;
 }

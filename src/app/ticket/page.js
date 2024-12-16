@@ -1,7 +1,15 @@
 import Nav from "@/components/Nav";
+import Ticket from "@/components/Ticket";
+import Camping from "@/components/Camping";
+import Kurv from "@/components/Kurv";
 
-export default function Ticket() {
-    return <div>
+export default function TicketS() {
+  return (
+    <div>
       <Nav></Nav>
-    </div>;
-  }
+      <Camping />
+      <Ticket />
+      <Kurv />
+    </div>
+  );
+}

@@ -25,7 +25,7 @@ const Camping = () => {
 
   return (
     <section className="p-10">
-      <div>
+      <div className="flex flex-wrap">
         {bookings.map((booking, index) => (
           <CampingCard
             key={index}

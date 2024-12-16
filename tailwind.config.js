@@ -29,6 +29,7 @@ module.exports = {
         300: "300px",
         400: "400px",
         500: "500px",
+        700: "700px",
         75: "75px",
         50: "50px",
         25: "35px",
@@ -37,7 +38,6 @@ module.exports = {
         lilla: "#732282",
         darkblue: "#6188C1",
         blue: "#e4f7ff",
-
       },
       borderRadius: {
         15: "15px",
