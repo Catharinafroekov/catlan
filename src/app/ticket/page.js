@@ -8,8 +8,9 @@ export default function TicketS() {
   return (
     <div>
       <Nav></Nav>
-      <Camping />
+
       <Ticket />
+      <Camping />
       <Kurv />
     </div>
   );
