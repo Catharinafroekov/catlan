@@ -13,21 +13,19 @@ import LineupBands from "@/components/LineupBands";
 export default function Home() {
   return (
     <div>
-
-
       <Nav />
       <img
-          className="xs:w-75 xs:h-75 xs:mt-10  md:w-150 md:h-150"
-          src="/img/logo.svg"
-          alt="logo ikon"
-        ></img>
+        className="xs:w-75 xs:h-75 xs:mt-10  md:w-150 md:h-150"
+        src="/img/logo.svg"
+        alt="logo ikon"
+      ></img>
 
       <Arrow />
       <Banner />
-      <LineupBands/>
+      <LineupBands />
       <Button />
       <Formel />
-      <Footer /> 
+      <Footer />
 
       <Camping />
       <Kurv />
