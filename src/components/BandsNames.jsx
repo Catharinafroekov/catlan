@@ -17,19 +17,19 @@ const BandsLineup = () => {
     }, []);
 
     return (
-        <section className="p-4">
+        <section className="p-4 flex justify-center">
           {bands.length > 0 ? (
-            <div className="grid grid-cols-4 gap-4">
+            <div className="grid md:grid-cols-4 sm:grid-cols-2 gap-10">
               {bands.map((band, index) => (
-                <div key={index} className="text-center">
+                <div key={index} className="text-center bg-white max-w-60 flex flex-col justify-center">
                   <Image
-                    className="mb-4"
+                    className="m-2 mx-auto"
                     src={band.logo.includes("https") ? band.logo : `/img/${band.logo}`}
-                    width={250}
-                    height={350}
+                    width={220}
+                    height={220}
                     alt={band.logo}
                   />
-               <p className="bg-gray-100 p-2 rounded shadow">{band.name}</p>
+               <p className="text-lilla p-2 mb-2">{band.name}</p>
                 </div>
               ))}
             </div>
