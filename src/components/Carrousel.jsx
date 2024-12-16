@@ -45,7 +45,7 @@ const Carrousel = () => {
 
   return (
     <div className="p-5">
-      <h1 className="text-darkblue text-center font-bold p-10 text-3xl">Program</h1>
+      <h1 className="text-darkblue text-center font-bold p-10 text-3xl uppercase">Program</h1>
 
       {/* Ugedage-vælger */}
       <div className="flex justify-center space-x-4 mb-6 ">
