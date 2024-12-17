@@ -6,6 +6,8 @@ import LineupBands from "@/components/LineupBands";
 import Timer from "@/components/Timer";
 import CountdownFestival from "@/components/CountdownFestival";
 import StandardButton from "@/components/StandardButton";
+import RadixButton from "@/components/RadixButton";
+import Formel from "@/components/Formel";
 import Link from "next/link";
 
 export default function Home() {
