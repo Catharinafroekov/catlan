@@ -6,6 +6,7 @@ import LineupBands from "@/components/LineupBands";
 import Timer from "@/components/Timer";
 import CountdownFestival from "@/components/CountdownFestival";
 import StandardButton from "@/components/StandardButton";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -18,11 +19,11 @@ export default function Home() {
         src="/img/logo.svg"
         alt="logo ikon"
       />
-      <StandardButton label="Buy your ticket here"/>
+      <Link href="/ticket"><StandardButton label="Buy your ticket here"/></Link>
       <Banner />
       <Arrow />
       <LineupBands />
-      <StandardButton label="Read more here"/>
+      <Link href="/lineup"><StandardButton label="Read more here"/></Link>
       <Footer />
     </div>
   );
