@@ -15,9 +15,14 @@ function MyTimer({ expiryTimestamp }) {
 
   return (
     <div style={{textAlign: 'center'}}>
-        <p>Countdown to festival start</p>
-      <div className='text-lilla'>
-        <span>{days}</span>:<span>{hours}</span>:<span>{minutes}</span>:<span>{seconds}</span>
+{/*         <p className="text-black text-center font-bold text-3xl uppercase">Countdown to festival start</p>
+ */}      <div className="text-black text-center font-bold text-xl uppercase flex gap-10 justify-center">
+        <div><span>{days}</span>
+        <p>days</p></div>
+        <div><span>{hours}</span>
+        <p>hours</p></div>
+        <div><span>{minutes}</span>
+        <p>minutes</p></div> 
       </div>
     </div>
   );
@@ -25,7 +30,7 @@ function MyTimer({ expiryTimestamp }) {
 
 export default function App() {
   const time = new Date();
-  time.setSeconds(time.getSeconds() + 600000); // 10 minutes timer
+  time.setSeconds(time.getSeconds() + 6000000); // 10 minutes timer
   return (
     <div>
       <MyTimer expiryTimestamp={time} />

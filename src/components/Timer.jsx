@@ -31,7 +31,7 @@ function Reservation() {
 
   return (
     <div>
-      <button onClick={handleReserveSpot} className="bg-red-600">
+      <button onClick={handleReserveSpot} className="p-2 rounded-15 border border-darkblue text-darkblue hover:underline">
         Gå til betaling
       </button>
 
@@ -46,7 +46,7 @@ function Reservation() {
             },
           }}
         >
-          <button className="bg-green-600 mt-5">
+          <button className="p-2 rounded-15 border border-darkblue text-darkblue hover:underline">
             Gå til formular
           </button>
         </Link>
