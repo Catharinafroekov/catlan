@@ -1,11 +1,13 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import CampingCard from "./CampingCard";
+import CampingBox from "./CampingBox";
 import Kurv from "./Kurv";
 
 const Camping = () => {
   const [bookings, setBookings] = useState([]); // Lagrer campingpladser
   const [cartItems, setCartItems] = useState([]); // Lagrer items i kurven
+  const [selectedBooking, setSelectedBooking] = useState(null); // Håndterer valgt campingområde
 
   // Hent campingpladserne (bookings) fra API
   useEffect(() => {
@@ -20,7 +22,11 @@ const Camping = () => {
 
   // Funktion til at tilføje campingplads til kurven (kun én ad gangen)
   const addToCart = (booking) => {
-    setCartItems([booking]); // Sætter kun én campingplads i kurven
+    setSelectedBooking(booking); // Sætter den valgte campingplads
+    setCartItems((prevItems) => [
+      ...prevItems,
+      { ...booking, type: "camping" }, // Tilføjer campingområdet som item
+    ]);
   };
 
   return (
@@ -35,7 +41,9 @@ const Camping = () => {
           />
         ))}
       </div>
-      <Kurv cartItems={cartItems} /> {/* Viser de valgte campingpladser */}
+
+      {/* Kurv komponenten med cartItems og selectedBooking som props */}
+      <CampingBox className="p-20 " selectedBooking={selectedBooking} />
     </section>
   );
 };
