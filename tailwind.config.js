@@ -95,33 +95,16 @@ module.exports = {
       },
       animation: {
         "caret-blink": "caret-blink 1.25s ease-out infinite",
-
         motion: "motion 30s linear infinite",
       },
       keyframes: {
-<<<<<<< HEAD
+        "caret-blink": {
+          "0%, 70%, 100%": { opacity: "1" },
+          "20%, 50%": { opacity: "0" },
+        },
         motion: {
           "0%": { transform: "translateX(100%)" },
           "100%": { transform: "translateX(-100%)" },
-        },
-      },
-    },
-  },
-  plugins: [],
-
-
-=======
-        "caret-blink": {
-          "0%,70%,100%": { opacity: "1" },
-          "20%,50%": { opacity: "0" },
-        },
-        motion: {
-          "0%": {
-            transform: "translateX(100%)",
-          },
-          "100%": {
-            transform: "translateX(-100%)",
-          },
         },
       },
       spacing: {
@@ -130,5 +113,4 @@ module.exports = {
     },
   },
   plugins: [require("tailwindcss-animate")],
->>>>>>> kurv-mandag-pt2
 };
