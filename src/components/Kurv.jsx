@@ -35,7 +35,7 @@ const Kurv = ({ cartItems = [], selectedBooking = null }) => {
           Samlet pris: {totalWithFee} kr.
         </p>
       </div>
-      <Link className="bg-slate-400 mt-20 flex justify-center" href="/payment">
+      <Link className="bg-slate-400 mt-20 flex justify-center" href="/form">
         Go To Payment
       </Link>
     </div>
