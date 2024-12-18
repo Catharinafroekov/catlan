@@ -2,6 +2,7 @@
 import React from "react";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
+import { useRouter } from "next/navigation";  // Import useRouter for navigation
 
 const Formel = () => {
   const {
@@ -9,9 +10,13 @@ const Formel = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
+  
+  const router = useRouter();  // Instantiate the router
 
   const onSubmit = (data) => {
     console.log("Form Data:", data);
+    // Redirect to payment page after successful form submission
+    router.push("/payment"); // Make sure the route "/payment" matches your payment page URL
   };
 
   return (
@@ -66,14 +71,13 @@ const Formel = () => {
           })}
         />
         {errors.email && <p className="text-red-500">{errors.email.message}</p>}
-        <Link href="/payment">
-          <button
-            type="submit"
-            className="bg-darkblue text-white mt-5 rounded-12 w-300 h-30"
-          >
-            Submit
-          </button>
-        </Link>
+        
+        <button
+          type="submit"
+          className="bg-darkblue text-white mt-5 rounded-12 w-300 h-30"
+        >
+          Submit
+        </button>
       </form>
     </div>
   );
