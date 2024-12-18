@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import Link from "next/link";
+import Timer from "@/components/Timer";
 
 const Kurv = ({ cartItems = [], selectedBooking = null }) => {
   // Beregn totalpris for billetter
@@ -35,9 +36,7 @@ const Kurv = ({ cartItems = [], selectedBooking = null }) => {
           Samlet pris: {totalWithFee} kr.
         </p>
       </div>
-      <Link className="bg-slate-400 mt-20 flex justify-center" href="/payment">
-        Go To Payment
-      </Link>
+      <Timer/>
     </div>
   );
 };

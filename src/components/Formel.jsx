@@ -1,5 +1,6 @@
 "use client"
 import React from "react";
+import Link from "next/link";
 import { useForm } from "react-hook-form";
 
 const Formel = () => {
@@ -55,13 +56,14 @@ const Formel = () => {
           })}
         />
         {errors.email && <p className="text-red-500">{errors.email.message}</p>}
-
+        <Link href="/payment">
         <button
           type="submit"
           className="bg-darkblue text-white mt-5 rounded-12 w-300 h-30"
         >
           Submit
         </button>
+        </Link>
       </form>
     </div>
   );

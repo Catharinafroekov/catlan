@@ -56,7 +56,6 @@ function FormPage() {
           {/* Only render the timer if expiry time exists */}
           <MyTimer expiryTimestamp={timerExpiry} onExpire={() => alert("Reservation expired!")} />
           <Formel />
-          <button onClick={handleConfirmReservation}>Confirm</button>
         </>
       )}
     </div>
