@@ -30,10 +30,6 @@ export default function Home() {
       <Link href="/lineup">
         <StandardButton label="Read more here" />
       </Link>
-   <Formel />
-      <Arrow />
-      <Banner />
-      <LineupBands />
       <Footer />
     </div>
   );
