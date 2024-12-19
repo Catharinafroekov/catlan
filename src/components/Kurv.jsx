@@ -27,9 +27,9 @@ const Kurv = ({ cartItems = [] }) => {
       )}
 
       <div className="mt-4 border-t pt-4">
-        <p className="text-black text-bold">Gebyr: 99 kr.</p>
+        <p className="text-black text-bold">Taxes: 99 kr.</p>
         <p className="text-black font-bold text-lg mb-5">
-          Samlet pris: {totalWithFee} kr.
+          Total amount: {totalWithFee} kr.
         </p>
       </div>
       <Timer />
