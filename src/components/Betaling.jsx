@@ -7,7 +7,7 @@ import {
 
 const Betaling = () => {
   return (
-    <div className="bg-white w-700 h-500 rounded-12 pl-20 pt-10 ml-20 mt-20">
+    <div className="bg-white xs:w-550 sm:w-700 h-500 rounded-12 xs:pl-2 sm:pl-20 pt-10 xs:ml-2 sm:ml-20 mt-20">
       <h2 className="text-4xl text-darkblue pb-10">Indtast kortoplysninger</h2>
       <p>Kortnummer</p>
       <InputOTP maxLength={16}>

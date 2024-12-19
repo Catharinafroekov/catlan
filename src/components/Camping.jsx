@@ -2,17 +2,16 @@
 import React, { useState, useEffect } from "react";
 import CampingCard from "./CampingCard";
 import CampingBox from "./CampingBox";
-import Kurv from "./Kurv";
 
 const Camping = () => {
-  const [bookings, setBookings] = useState([]); // Lagrer campingpladser
-  const [cartItems, setCartItems] = useState([]); // Lagrer items i kurven
-  const [selectedBooking, setSelectedBooking] = useState(null); // Håndterer valgt campingområde
+  const [bookings, setBookings] = useState([]);
+  const [cartItems, setCartItems] = useState([]);
 
-  // Hent campingpladserne (bookings) fra API
+  const [selectedBooking, setSelectedBooking] = useState(null);
+
   useEffect(() => {
     const fetchBookings = async () => {
-      const response = await fetch("https://freezing-humble-sauroposeidon.glitch.me/available-spots");
+      const response = await fetch("http://localhost:8080/available-spots");
       const data = await response.json();
       setBookings(data);
     };
@@ -20,12 +19,11 @@ const Camping = () => {
     fetchBookings();
   }, []);
 
-  // Funktion til at tilføje campingplads til kurven (kun én ad gangen)
   const addToCart = (booking) => {
-    setSelectedBooking(booking); // Sætter den valgte campingplads
+    setSelectedBooking(booking);
     setCartItems((prevItems) => [
       ...prevItems,
-      { ...booking, type: "camping" }, // Tilføjer campingområdet som item
+      { ...booking, type: "camping" },
     ]);
   };
 
@@ -37,12 +35,11 @@ const Camping = () => {
             key={index}
             area={booking.area}
             available={booking.available}
-            addToCart={addToCart} // Sender addToCart funktionen som prop
+            addToCart={addToCart}
           />
         ))}
       </div>
 
-      {/* Kurv komponenten med cartItems og selectedBooking som props */}
       <CampingBox className="p-20 " selectedBooking={selectedBooking} />
     </section>
   );

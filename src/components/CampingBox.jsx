@@ -1,10 +1,9 @@
 "use client";
 import React from "react";
 
-const CampingBox = ({ cartItems = [], selectedBooking = null }) => {
+const CampingBox = ({ selectedBooking = null }) => {
   return (
-    <div className="bg-white w-400 rounded-12  p fixed top-30 right-20">
-      {/* Vis valgt campingområde */}
+    <div className="bg-white w-400 rounded-12 fixed top-30 right-20 xs:w-200 md:w-400 xs:right-7  md:right-20">
       <h3 className="text-l text-darkblue pl-4">Campingområde</h3>
       {selectedBooking && (
         <div className="pl-4">
