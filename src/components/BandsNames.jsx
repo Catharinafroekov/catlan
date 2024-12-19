@@ -9,7 +9,7 @@ const BandsLineup = () => {
     // Funktion til at hente data fra API
     useEffect(() => {
       const Bands = async () => {
-        const response = await fetch("http://localhost:8080/bands?limit=1");
+        const response = await fetch("https://freezing-humble-sauroposeidon.glitch.me/bands");
         const data = await response.json();
         setBands(data);
       };
