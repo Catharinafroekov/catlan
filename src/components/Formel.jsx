@@ -3,6 +3,15 @@ import React from "react";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/navigation";  // Import useRouter for navigation
+import { supabase } from "../supabaseClient"; // Adjust the path to supabaseClient.js
+
+
+// supabaseClient.js
+import { createClient } from '@supabase/supabase-js';
+
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+export const supabase = createClient(supabaseUrl, supabaseKey);
 
 const Formel = () => {
   const {
@@ -10,13 +19,25 @@ const Formel = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  
-  const router = useRouter();  // Instantiate the router
 
-  const onSubmit = (data) => {
-    console.log("Form Data:", data);
-    // Redirect to payment page after successful form submission
-    router.push("/payment"); // Make sure the route "/payment" matches your payment page URL
+  const router = useRouter();
+
+  const onSubmit = async (data) => {
+    try {
+      // Insert the form data into the Supabase table
+      const { error } = await supabase.from("form_data").insert([data]);
+
+      if (error) {
+        console.error("Supabase Insert Error:", error.message);
+        alert("Failed to submit the form. Please try again.");
+      } else {
+        console.log("Form Data Successfully Submitted:", data);
+        router.push("/payment"); // Redirect to the payment page
+      }
+    } catch (err) {
+      console.error("Error submitting form data:", err.message);
+      alert("An unexpected error occurred. Please try again.");
+    }
   };
 
   return (
