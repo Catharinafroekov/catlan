@@ -1,17 +1,14 @@
 "use client";
+
 import React from "react";
-import Link from "next/link";
 import { useForm } from "react-hook-form";
-import { useRouter } from "next/navigation";  // Import useRouter for navigation
-import { supabase } from "../supabaseClient"; // Adjust the path to supabaseClient.js
+import { useRouter } from "next/navigation";
+import { createClient } from "@supabase/supabase-js"; // Importer createClient direkte
 
-
-// supabaseClient.js
-import { createClient } from '@supabase/supabase-js';
-
+// Initialiser Supabase-klienten her
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-export const supabase = createClient(supabaseUrl, supabaseKey);
+const supabase = createClient(supabaseUrl, supabaseKey);
 
 const Formel = () => {
   const {
@@ -24,19 +21,19 @@ const Formel = () => {
 
   const onSubmit = async (data) => {
     try {
-      // Insert the form data into the Supabase table
+      // Indsæt formulardata i Supabase-tabellen
       const { error } = await supabase.from("form_data").insert([data]);
 
       if (error) {
         console.error("Supabase Insert Error:", error.message);
-        alert("Failed to submit the form. Please try again.");
+        alert("Kunne ikke indsende formularen. Prøv igen.");
       } else {
-        console.log("Form Data Successfully Submitted:", data);
-        router.push("/payment"); // Redirect to the payment page
+        console.log("Formular-data blev indsendt:", data);
+        router.push("/payment"); // Redirect på succes
       }
     } catch (err) {
-      console.error("Error submitting form data:", err.message);
-      alert("An unexpected error occurred. Please try again.");
+      console.error("Uventet fejl:", err.message);
+      alert("Der opstod en uventet fejl. Prøv igen.");
     }
   };
 
@@ -92,7 +89,7 @@ const Formel = () => {
           })}
         />
         {errors.email && <p className="text-red-500">{errors.email.message}</p>}
-        
+
         <button
           type="submit"
           className="bg-darkblue text-white mt-5 rounded-12 w-300 h-30"
