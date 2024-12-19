@@ -5,7 +5,6 @@ import CampingBox from "./CampingBox";
 
 const Camping = () => {
   const [bookings, setBookings] = useState([]);
-  const [cartItems, setCartItems] = useState([]);
 
   const [selectedBooking, setSelectedBooking] = useState(null);
 
