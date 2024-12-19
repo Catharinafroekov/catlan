@@ -61,7 +61,6 @@ const Betaling = () => {
           </label>
         </div>
       </div>
-      Link
     </div>
   );
 };

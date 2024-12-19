@@ -22,7 +22,7 @@ const Formel = () => {
   const onSubmit = async (data) => {
     try {
       // Indsæt formulardata i Supabase-tabellen
-      const { error } = await supabase.from("form_data").insert([data]);
+      const { error } = await supabase.from("catlan").insert([data]);
 
       if (error) {
         console.error("Supabase Insert Error:", error.message);

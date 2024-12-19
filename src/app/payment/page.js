@@ -1,11 +1,11 @@
 import Betaling from "@/components/Betaling";
 import Footer from "@/components/Footer";
-import Kurv from "@/components/Kurv";
+import Nav from "@/components/Nav";
 
 const Payment = () => {
   return (
     <div>
-      <Kurv />
+      <Nav/>
       <Betaling />
       <Footer />
     </div>
