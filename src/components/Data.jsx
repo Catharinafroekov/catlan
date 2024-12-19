@@ -35,7 +35,7 @@ function FormPage() {
 
   const handleConfirmReservation = async () => {
     try {
-      const response = await fetch("http://localhost:8080/fullfill-reservation", {
+      const response = await fetch("https://freezing-humble-sauroposeidon.glitch.me/fullfill-reservation", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

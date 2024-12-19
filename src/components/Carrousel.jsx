@@ -9,7 +9,7 @@ const Carrousel = () => {
   // Hent data fra API
   useEffect(() => {
     const fetchSchedule = async () => {
-      const response = await fetch("http://localhost:8080/schedule");
+      const response = await fetch("https://freezing-humble-sauroposeidon.glitch.me/schedule");
       const data = await response.json();
       setSchedule(data);
     };

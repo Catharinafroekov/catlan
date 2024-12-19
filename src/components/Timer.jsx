@@ -8,7 +8,7 @@ function Reservation() {
 
   const handleReserveSpot = async () => {
     try {
-      const response = await fetch("http://localhost:8080/reserve-spot", {
+      const response = await fetch("https://freezing-humble-sauroposeidon.glitch.me/reserve-spot", {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
