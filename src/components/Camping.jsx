@@ -11,7 +11,7 @@ const Camping = () => {
 
   useEffect(() => {
     const fetchBookings = async () => {
-      const response = await fetch("http://localhost:8080/available-spots");
+      const response = await fetch("https://freezing-humble-sauroposeidon.glitch.me/available-spots");
       const data = await response.json();
       setBookings(data);
     };
