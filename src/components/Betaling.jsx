@@ -8,8 +8,8 @@ import {
 const Betaling = () => {
   return (
     <div className="bg-white xs:w-550 sm:w-700 h-500 rounded-12 xs:pl-2 sm:pl-20 pt-10 xs:ml-2 sm:ml-20 mt-20">
-      <h2 className="text-4xl text-darkblue pb-10">Indtast kortoplysninger</h2>
-      <p>Kortnummer</p>
+      <h2 className="text-4xl text-darkblue pb-10">Card information</h2>
+      <p>Cardnumber</p>
       <InputOTP maxLength={16}>
         <InputOTPGroup className=" w-100">
           <InputOTPSlot className="h-25" index={0} />
@@ -41,7 +41,7 @@ const Betaling = () => {
       </InputOTP>
       <div className="grid grid-cols-2">
         <div>
-          <p className="pt-5">Udløbsdato</p>
+          <p className="pt-5">Date</p>
           <InputOTP maxLength={4}>
             <InputOTPGroup className=" w-50">
               <InputOTPSlot className="h-25" index={0} />
@@ -56,7 +56,7 @@ const Betaling = () => {
         </div>
         <div>
           <label>
-            <p className="pt-5">Kode</p>
+            <p className="pt-5">CVV</p>
             <input className="bg-blue" type="text" />
           </label>
         </div>

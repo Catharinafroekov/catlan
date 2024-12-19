@@ -28,8 +28,8 @@ const Camping = () => {
 
   return (
     <section className="p-10">
-      <div className="flex flex-wrap">
-        {bookings.map((booking, index) => (
+<div className="grid grid-cols-[repeat(3,minmax(0,0.2fr))]">
+  {bookings.map((booking, index) => (
           <CampingCard
             key={index}
             area={booking.area}

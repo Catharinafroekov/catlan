@@ -32,7 +32,7 @@ function Reservation() {
   return (
     <div>
       <button onClick={handleReserveSpot} className="p-2 rounded-15 border border-darkblue text-darkblue hover:underline">
-        Gå til betaling
+        Go to Payment
       </button>
 
       {/* Navigate to form page with reservationId and expiryTime */}
@@ -47,7 +47,7 @@ function Reservation() {
           }}
         >
           <button className="p-2 rounded-15 border border-darkblue text-darkblue hover:underline">
-            Gå til formular
+            Are you sure?
           </button>
         </Link>
       )}
