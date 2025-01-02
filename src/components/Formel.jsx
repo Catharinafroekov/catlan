@@ -19,7 +19,7 @@ const Formel = () => {
 
   const router = useRouter();
 
-  const onSubmit = async (data) => {
+  const onSubmit = async (data) => { //fejlfinding i koden
     try {
       // Indsæt formulardata i Supabase-tabellen
       const { error } = await supabase.from("catlan").insert([data]);

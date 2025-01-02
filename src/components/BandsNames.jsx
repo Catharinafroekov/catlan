@@ -21,15 +21,15 @@ const BandsLineup = () => {
           {bands.length > 0 ? (
             <div className="grid md:grid-cols-4 sm:grid-cols-2 gap-10">
               {bands.map((band, index) => (
-                <div key={index} className="text-center bg-white max-w-60 flex flex-col justify-center">
-                  <Image
+                <div key={index} className="text-center bg-white max-w-60 flex flex-col justify-between min-h-[240px]">
+                <Image
                     className="m-2 mx-auto"
                     src={band.logo.includes("https") ? band.logo : `/img/${band.logo}`}
                     width={220}
                     height={220}
                     alt={band.logo}
                   />
-               <p className="text-lilla p-2 mb-2">{band.name}</p>
+               <p className="text-black p-2 mb-2 h-10 flex items-center justify-center">{band.name}</p>
                 </div>
               ))}
             </div>
