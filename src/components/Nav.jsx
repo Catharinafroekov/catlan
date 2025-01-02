@@ -13,7 +13,7 @@ function Navigation() {
         <header>
             <nav className="flex justify-between items-center p-5">
                 {/* Logo */}
-                <Link href="/"><img src="/img/ravn.svg" alt="ravn ikon" className="h-8 w-auto" /></Link>
+                <Link href="/"><img src="/img/ravn.svg" alt="ravn ikon" className="h-14 w-auto" /></Link>
 
                 {/* Burger Button */}
                 <button className="text-black" onClick={toggleMenu}>
@@ -22,9 +22,9 @@ function Navigation() {
                         stroke="currentColor"
                         strokeLinecap="round"
                         strokeLinejoin="round"
-                        strokeWidth="2"
-                        viewBox="0 0 24 24"
-                        className="w-6 h-6"
+                        strokeWidth="3"
+                        viewBox="0 0 25 25"
+                        className="w-10 h-6"
                     >
                         <path d="M4 6h16M4 12h16M4 18h16"></path>
                     </svg>
